@@ -1,0 +1,115 @@
+.loginContainer {
+	background-color: #fff3ec;
+	width: 30%;
+	height: 60%;
+	display: flex;
+	border-radius: 24px;
+	filter: drop-shadow(0px 3px 3px #e9c3a8);
+	align-items: center;
+	flex-direction: column;
+	justify-content: flex-start;
+}
+
+.loginPage {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-family: "Roboto";
+}
+
+body {
+	margin: 0px;
+	padding: 0px;
+	display: flex;
+}
+
+.loginPageLogo {
+	font-size: 28pt;
+	font-family: monospace;
+	padding-top: 48px;
+	letter-spacing: 6px;
+	user-select: none;
+	padding-bottom: 16px;
+}
+
+#IT {color: #ff6600;}
+#smc {color: black;}
+
+.loginLabel {
+	width: 75%;
+	font-size: 9pt;
+	color: #8f3d06;
+	margin-top: 24px;
+	margin-bottom: 8px;
+}
+
+.loginField {
+	width: 75%;
+	height: 28px;
+	border-radius: 20px;
+	border: 0px;
+	background-color: #f7cfb2;
+	padding: 0px;
+	padding-left: 8px;
+	transition: background-color 0.2s ease;
+	color: #8f3d06;
+	font-size: 9pt;
+}
+
+#passwordInput {
+	width: calc(75% - 8px);
+}
+
+.loginButton {
+	height: 28px;
+	display: flex;
+	align-items: center;
+	border-radius: 20px;
+	background-color:#ff9854;
+	font-weight: bold;
+	font-size: 9pt;
+	cursor: default;
+	transition: background-color ease 0.2s;
+	user-select: none;
+	padding-left: 64px;
+	padding-right: 64px;
+	margin-top: 24px;
+	color: white;
+	border: 0px;
+}
+
+.loginButton:hover {
+	background-color: #ffbd8e;
+	cursor: pointer;
+}
+
+.loginForgotPassword {
+	font-size: 9pt;
+	color:#8f3d06;
+	margin-top: 16px;
+}
+
+.loginForgotPassword:hover {
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+#loginError {
+	font-size: 10pt;
+	color: #ff6600;
+	margin-top: 16px;
+}
+
+select:focus, input:focus {
+	outline: 0px;
+}
+
+.loginField:hover {
+	background-color: #fde4cf;
+}
+
+#usernameSelect:hover {
+	cursor: pointer;
+}

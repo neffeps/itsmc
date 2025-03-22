@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<head>
+    <title>Logowanie - ITsmc</title>
+    <meta charset="utf-8"/>
+    <link rel='stylesheet' href='login_style.css'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" 
+    rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="loginPage">
+        <div class="loginContainer">
+            <div class="loginPageLogo"><span id="IT">IT</span><span id="smc">smc</span></div>
+            <div class="loginLabel">Nazwa użytkownika</div>
+            <select id="usernameSelect" class="loginField"></select>
+            <div class="loginLabel">Hasło</div>
+            <input type="password" id="passwordInput" class="loginField">
+            <button onclick="login()" class="loginButton">Zaloguj</button>
+            <div class="loginForgotPassword">Nie pamiętasz hasła?</div>
+            <div id="loginError"></div>
+        </div>
+    </div>
+    <script src="/scripts/login.js"></script>
+</body>

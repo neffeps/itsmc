@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Naprawy wewnętrzne - ITsmc</title>
+        <meta charset="utf-8"/>
+		<link rel='stylesheet' href='main_style.css'>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" 
+		rel="stylesheet">
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+		<script>
+			let username = null;
+			let viewMode = null;
+		</script>
+		<script src="/scripts/auth_check.js"></script>
+		<script src="/scripts/repair_list.js"></script>
+		<script src="/scripts/repair_details.js"></script>
+		<script src="/scripts/back_to_list.js"></script>
+		<script src="/scripts/logout.js"></script>
+	</head>
+	<body>
+		<div id='sidePanel'>
+			<div id='logo'>
+				<span id='IT'>IT</span><span id='smc'>smc</span><span id='verId'>v.23022025-a</span>
+			</div>
+			<div class='separator'>NARZĘDZIA GŁÓWNE</div>
+			<div class='menuButton'>Pulpit</div>
+			<div class='menuButton'>Oś czasu</div>
+			<div class='separator'>SERWIS</div>
+			<div class='selectedMenuButton'>Naprawy wewnętrzne</div>
+			<div class='menuButton'>Naprawy zewnętrzne</div>
+			<div class='menuButton'>Klienci</div>
+			<div class='menuButton'>Sprzęt</div>
+			<div class='separator'>PŁATNOŚCI</div>
+			<div class='menuButton'>Wpłaty</div>
+			<div class='menuButton'>Koszty</div>
+			<div class='separator'>ANALIZY</div>
+			<div class='menuButton'>Raporty</div>
+			<div class='menuButton'>Wykresy</div>
+			<div class='separator'>USTAWIENIA</div>
+			<div class='menuButton'>Skórka</div>
+			<div class='menuButton'>Użytkownicy</div>
+		</div>
+		<div id='dataBody'>
+			<div id='topPanel'>
+				<div id='userAvatar' onclick="logout()" title="Wyloguj się"></div>
+				<div id='userOptions'></div>
+			</div>
+			<div id='dbDataTableContainer'>
+				<table id='dbDataTable'>
+					<colgroup>
+						<col id='repairId' class='dataColumn'/>
+						<col id='repairClientName' class='dataColumn'/>
+						<col id='repairEquipmentCompany' class='dataColumn'/>
+						<col id='repairEquipmentModel' class='dataColumn'/>
+						<col id='repairRepairStatus' class='dataColumn'/>
+						<col id='repairEquipmentDamageDescription' class='dataColumn'/>
+						<col id='reapirEquipmentRepairDescription' class='dataColumn'/>
+					</colgroup>
+					<thead>
+						<tr id='dataTableHeader'>
+							<td>ID</td>
+							<td>Klient</td>
+							<td>Producent sprzętu</td>
+							<td>Model sprzętu</td>
+							<td>Status</td>
+							<td>Opis uszkodzenia</td>
+							<td>Opis naprawy</td>
+						</tr>
+					</thead>
+					<tbody id='dbDataTBody'>
+					</tbody>
+				</table>
+			</div>
+			<div id='dbDataDetailsContainer'>
+				<div class='dbDataDetailsHeader'>
+					<div class='dbDataDetailsHeaderLeft'>
+						<div class='dbDataDetailsBackButton' onclick="back_to_list()"><</div>
+						<div class='dbDataDetailsHeaderIcon'><img src='/resources/inRepairs-icon32px.png' width='24px'/></div>
+						<div class='dbDataDetailsHeaderText'>Szczegóły naprawy:&nbsp;</div>
+						<div class='dbDataDetailsHeaderText' id='dbDataDetailsHeaderId'></div>
+					</div>
+					<div class='dbDataDetailsHeaderRight'>
+						<div class='dbDataDetailsEdit' onclick=''>
+							<img src='/resources/edit-icon16px.png' id='editIcon'/>
+							<span id='editText'>Edytuj</span>
+						</div>
+						<div id='previousObject' class='dbDataDetailsPrevious'><</div>
+						<div id='nextObject' class='dbDataDetailsNext'>></div>
+					</div>
+				</div>
+				<div class='dbDataDetailsFieldsHeader'>
+					<div class='dbDataDetailsFieldHeader'>Imię</div>
+					<div class='dbDataDetailsFieldHeader'>Nazwisko</div>
+					<div class='dbDataDetailsFieldHeader'>Adresy e-mail</div>
+					<div class='dbDataDetailsFieldHeader'>Numery telefonu</div>
+				</div>
+				<div class='dbDataDetailsRow'>
+					<div class='dbDataDetailsField' id='dbDataDetailsFirstName'></div>
+					<div class='dbDataDetailsField' id='dbDataDetailsLastName'></div>
+					<div class='dbDataDetailsField' id='dbDataDetailsEmailAddresses'></div>
+					<div class='dbDataDetailsField' id='dbDataDetailsPhoneNumbers'></div>
+				</div>
+				<div class='dbDataDetailsFieldsHeader'>
+					<div class='dbDataDetailsFieldHeader'>Ulica</div>
+					<div class='dbDataDetailsFieldHeader'>Nr ulicy</div>
+					<div class='dbDataDetailsFieldHeader'>Nr mieszkania</div>
+					<div class='dbDataDetailsFieldHeader'>Miejscowość</div>
+				</div>
+				<div class='dbDataDetailsRow'>
+					<div class='dbDataDetailsField' id='dbDataDetailsStreet'></div>
+					<div class='dbDataDetailsField' id='dbDataDetailsStreetNumber'></div>
+					<div class='dbDataDetailsField' id='dbDataDetailsRoomNumber'></div>
+					<div class='dbDataDetailsField' id='dbDataDetailsCity'></div>
+				</div>
+				<div class='dbDataDetailsFieldsHeader'>
+					<div class='dbDataDetailsFieldHeader'>Producent sprzętu</div>
+					<div class='dbDataDetailsFieldHeader'>Model sprzętu</div>
+					<div class='dbDataDetailsFieldHeader'>Typ sprzętu</div>
+					<div class='dbDataDetailsFieldHeader'>Status sprzętu</div>
+				</div>
+				<div class='dbDataDetailsRow'>
+					<div class='dbDataDetailsField' id='dbDataDetailsEquipmentCompany'></div>
+					<div class='dbDataDetailsField' id='dbDataDetailsEquipmentModel'></div>
+					<div class='dbDataDetailsField' id='dbDataDetailsEquipmentType'></div>
+					<div class='dbDataDetailsField' id='dbDataDetailsEquipmentStatus'></div>
+				</div>
+				<div class='dbDataDetailsFieldsHeader'>
+					<div class='dbDataDetailsFieldHeader'>Data utworzenia</div>
+					<div class='dbDataDetailsFieldHeader'>Serwisant</div>
+					<div class='dbDataDetailsFieldHeader'>Typ naprawy</div>
+					<div class='dbDataDetailsFieldHeader'>Status naprawy</div>
+				</div>
+				<div class='dbDataDetailsRow'>
+					<div class='dbDataDetailsField' id='dbDataDetailsCreationDate'></div>
+					<div class='dbDataDetailsField' id='dbDataDetailsRepairUser'></div>
+					<div class='dbDataDetailsField' id='dbDataDetailsRepairType'></div>
+					<div class='dbDataDetailsField' id='dbDataDetailsRepairStatus'></div>
+				</div>
+				<div class='dbDataDetailsFieldsHeader'>
+					<div class='dbDataDetailsDescriptionFieldHeader'>Opis uszkodzenia</div>
+					<div class='dbDataDetailsDescriptionFieldHeader'>Opis naprawy</div>
+				</div>
+				<div class='dbDataDetailsDescriptionRow'>
+					<div class='dbDataDetailsDescriptionField' id='dbDataDetailsDamageDescription'></div>
+					<div class='dbDataDetailsDescriptionField' id='dbDataDetailsRepairDescription'></div>
+				</div>
+				<div class='dbDataDetailsTabsContainer'>
+					<div class='dbDataDetailsTabActive'><img src='/resources/comments-icon16px.png' class='tabIcon'/>Komentarze</div>
+					<div class='dbDataDetailsTab'><img src='/resources/photos-icon16px.png' class='tabIcon'/>Zdjęcia</div>
+					<div class='dbDataDetailsTab'><img src='/resources/files-icon16px.png' class='tabIcon'/>Pliki</div>
+					<div class='dbDataDetailsTab'><img src='/resources/costs-icon16px.png' class='tabIcon'/>Wpłaty</div>
+					<div class='dbDataDetailsTab'><img src='/resources/costs2-icon16px.png' class='tabIcon'/>Koszty</div>
+				</div>
+			</div>
+		</div>
+		<script>
+			let sidePanel = document.querySelector("#sidePanel");
+			let dbDataTableContainer = document.querySelector("#dbDataTableContainer");
+			let dbDataDetailsContainer = document.querySelector("#dbDataDetailsContainer");
+			function sidePanelHeightOnResize() {
+				let windowHeight = document.documentElement.clientHeight;
+				sidePanel.style.height = windowHeight + "px";
+			}
+			function dbDataWidthOnResize() {
+				let windowWidthMinusSidePanel = document.documentElement.clientWidth - 240;
+				dbDataTableContainer.style.width = windowWidthMinusSidePanel + "px";
+				dbDataDetailsContainer.style.width = windowWidthMinusSidePanel + "px";
+			}
+			function dbDataHeightOnResize() {
+				let windowHeightMinusTopPanel = document.documentElement.clientHeight - 56;
+				dbDataTableContainer.style.height = windowHeightMinusTopPanel + "px";
+				dbDataDetailsContainer.style.height = windowHeightMinusTopPanel + "px";
+			}
+			function elementSizeHandler() {
+				let windowWidth = document.documentElement.clientWidth;
+				if(windowWidth < 1280) {
+					sidePanelHeightOnResize();
+					dbDataHeightOnResize();
+				}
+				else {
+					sidePanelHeightOnResize();
+					dbDataWidthOnResize();
+					dbDataHeightOnResize();
+				}
+			}
+			elementSizeHandler();
+			window.addEventListener("resize", elementSizeHandler);
+			document.addEventListener('keydown', function(event) {
+				if (viewMode == "details") {
+					if (event.key == "ArrowLeft") {
+						repair_details(previousId);
+					}
+					else if (event.key == "ArrowRight") {
+						repair_details(nextId);
+					}
+					else if (event.key == "Escape") {
+						back_to_list();
+					}
+				}
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,533 @@
+#logo {
+	font-family: monospace;
+	font-size: 18pt;
+	padding: 16px;
+	padding-bottom: 8px;
+	text-align: center;
+	letter-spacing: 6px;
+	cursor: default;
+	user-select:none;
+	margin-bottom: 8px;
+}
+
+#IT {color: #ff6600;}
+#smc {color: black;}
+#verId {font-size: 7pt; letter-spacing: 0px;}
+
+#sidePanel {
+	background-color: #fff3ec;
+	width: 240px;
+	flex-shrink: 0;
+	overflow: auto;
+}
+
+body {
+	margin: 0px;
+	padding: 0px;
+	display: flex;
+}
+
+.separator {
+	font-family: "Roboto";
+	font-size: 8pt;
+	padding-left: 12px;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	text-align: left;
+	color: #a97b59;
+	cursor: default;
+}
+
+.menuButton {
+	font-family: "Roboto";
+	font-size: 10pt;
+	padding-left: 16px;
+	padding-top: 6px;
+	padding-bottom: 6px;
+	text-align: left;
+	cursor: default;
+	font-weight: normal;
+	transition: font-weight 0.1s ease, background-color 0.2s ease;
+	background-color: #fff3ec;
+	margin-top: 6px;
+	margin-bottom: 6px;
+	border-radius: 16px;
+	margin-left: 8px;
+	margin-right: 8px;
+}
+
+.menuButton:hover {
+	cursor: pointer;
+	background-color: #fde4cf;
+}
+
+.selectedMenuButton {
+	font-family: "Roboto";
+	font-size: 10pt;
+	padding-left: 16px;
+	padding-top: 6px;
+	padding-bottom: 4px;
+	text-align: left;
+	cursor: default;
+	font-weight: bold;
+	transition: font-weight 0.1s ease, background-color 0.2s ease;
+	background-color: #f7cfb2;
+	margin-left: 8px;
+	margin-right: 8px;
+	border-radius: 16px;
+	margin-top: 6px;
+	margin-bottom: 6px;
+	filter: drop-shadow(0px 2px 2px #dbb295);
+}
+
+#dataBody {
+	flex-grow: 1;
+	overflow: hidden;
+	background-color: #fff3ec;
+	font-family: "Roboto";
+}
+
+#topPanel {
+	height: 56px;
+	background-color: #fff3ec;
+	display: flex;
+	align-items: center;
+	flex-direction: row-reverse;
+	padding-right: 8px;
+}
+
+#dataTableHeader {
+	font-size: 10pt;
+	font-weight: bold;
+	height: 28px;
+	cursor: default;
+}
+
+#dbDataTable {
+	font-size: 10pt;
+	padding-left: 12px;
+	padding-right: 12px;
+	padding-top: 4px;
+	border-collapse: separate;
+	border-spacing: 0px 4px;
+}
+
+#dbDataTableContainer {
+	background-color: #ffffff;
+	border-top-left-radius: 24px;
+	display: flex;
+	flex-direction: column;
+}
+
+#dbDataDetailsContainer {
+	background-color: #ffffff;
+	border-top-left-radius: 24px;
+	display: none;
+	flex-direction: column;
+	padding-right: 16px;
+}
+
+td {
+	padding-left: 4px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.dbDataDetailsBackButton {
+	width: 21px;
+	height: 32px;
+	display: flex;
+	align-items: center;
+	padding-left: 11px;
+	border-radius: 6px;
+	background-color: #ffe5d2;
+	margin-right: 6px;
+	font-weight: normal;
+	font-family: "Nanum Gothic";
+	cursor: default;
+	transition: background-color ease 0.2s;
+	user-select: none;
+}
+
+.dbDataDetailsEdit {
+	height: 32px;
+	display: flex;
+	align-items: center;
+	padding-left: 10px;
+	padding-right: 10px;
+	border-radius: 6px;
+	background-color: #ffe5d2;
+	margin-right: 6px;
+	font-weight: normal;
+	font-size: 10pt;
+	cursor: default;
+	transition: background-color ease 0.2s;
+	user-select: none;
+}
+
+#editIcon { margin-right: 6px; }
+#editText { padding-bottom: 2px; }
+
+.dbDataDetailsNext, .dbDataDetailsPrevious {
+	width: 21px;
+	height: 32px;
+	display: flex;
+	align-items: center;
+	padding-left: 11px;
+	border-radius: 6px;
+	background-color: #ffe5d2;
+	margin-right: 6px;
+	font-weight: normal;
+	font-family: "Nanum Gothic";
+	cursor: default;
+	transition: background-color ease 0.2s;
+	user-select: none;
+}
+
+.dbDataDetailsNextInactive, .dbDataDetailsPreviousInactive {
+	width: 21px;
+	height: 32px;
+	display: flex;
+	align-items: center;
+	padding-left: 11px;
+	border-radius: 6px;
+	background-color: #fff3ec;
+	margin-right: 6px;
+	font-weight: normal;
+	font-family: "Nanum Gothic";
+	cursor: default;
+	user-select: none;
+	color: #aaaaaa;
+	transition: background-color ease 0.2s, color ease 0.1s;
+}
+
+.dbDataDetailsNext, .dbDataDetailsNextInactive  {margin-right: 16px; }
+
+.dbDataDetailsNext:hover, .dbDataDetailsPrevious:hover, .dbDataDetailsEdit:hover {
+	background-color: #fff3ec;
+	cursor: pointer;
+}
+
+.dbDataDetailsBackButton:hover {
+	background-color: #fff3ec;
+	cursor: pointer;
+}
+
+.dbDataDetailsHeaderIcon {
+	width: 32px;
+	height: 32px;
+	background-color: #ff9854;
+	border-radius: 6px;
+	margin-right: 8px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.dbDataDetailsHeader {
+	padding-left: 16px;
+	padding-top: 14px;
+	font-size: 11pt;
+	font-weight: bold;
+	padding-bottom: 4px;
+	height: 32px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.dbDataDetailsHeaderLeft {
+	display: flex;
+	align-items: center;
+}
+
+.dbDataDetailsHeaderRight {
+	display: flex;
+	align-items: center;
+}
+
+#dbDataDetailsHeaderId {
+	font-weight: normal;
+}
+
+.dbDataDetailsFieldsHeader {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	padding-right: 16px;
+}
+
+.dbDataDetailsFieldHeader {
+	width: 25%;
+	padding-left: 16px;
+	padding-bottom: 4px;
+	font-size: 8pt;
+	padding-top: 4px;
+	color:#8f3d06;
+	user-select: none;
+	cursor: default;
+}
+
+.dbDataDetailsRow {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	padding-right: 16px;
+}
+
+.dbDataDetailsField {
+	background-color: #fff3ec;
+	height: 28px;
+	display: flex;
+	align-items: center;
+	width: 25%;
+	margin-left: 16px;
+	border-radius: 20px;
+	padding-left: 12px;
+	font-size: 10pt;
+	margin-bottom: 0px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+
+}
+
+.dbDataDetailsDescriptionRow {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	padding-right: 16px;
+}
+
+.dbDataDetailsDescriptionField {
+	background-color: #fff3ec;
+	height: 84px;
+	display: flex;
+	padding-top: 8px;
+	width: 50%;
+	margin-left: 16px;
+	border-radius: 20px;
+	padding-left: 12px;
+	font-size: 10pt;
+	margin-bottom: 0px;
+}
+
+.dbDataDetailsDescriptionFieldHeader {
+	width: 50%;
+	padding-left: 16px;
+	padding-bottom: 4px;
+	font-size: 8pt;
+	padding-top: 4px;
+	color:#8f3d06;
+}
+
+.dbRow {
+	height: 28px;
+	cursor: default;
+	transition: background-color 0.2s ease;
+}
+
+.dbRow:hover {
+	cursor: pointer;
+	background-color: #fff5f0;
+}
+
+.dbRowRoundedLeft {
+	border-top-left-radius: 12px;
+	border-bottom-left-radius: 12px;
+}
+
+.dbRowRoundedRight {
+	border-top-right-radius: 12px;
+	border-bottom-right-radius: 12px;
+}
+
+.dbRowStatusOpen {
+	background-color: #ffede1;
+}
+
+.dbRowStatusInProgress {
+	background-color: #fffbe1;
+}
+
+.dbRowStatusWaitingForParts {
+	background-color: #f1f1f1;
+}
+
+.dbRowStatusWaitingForDecision {
+	background-color: #f1f1f1;
+}
+
+.dbRowStatusCompleted {
+	background-color: #e1ffe6;
+}
+
+.dbRowStatusNotCompleted {
+	background-color: #ffe1e1;
+}
+
+.dbRowStatusClosed {
+	background-color: #e1f5ff;
+}
+
+.dbDataDetailsTabsContainer {
+	display: flex;
+	flex-direction: row;
+	font-size: 10pt;
+	margin-left: 16px;
+	margin-right: 16px;
+	padding-top: 12px;
+	margin-top: 12px;
+	border-top: 1px solid #f5dece;
+	border-radius: 6px;
+}
+
+.dbDataDetailsTab {
+	margin-right: 12px;
+	padding-left: 11px;
+	padding-right: 12px;
+	height: 32px;
+	display: flex;
+	align-items: center;
+	background-color: #ffe5d2;
+	user-select: none;
+	cursor: default;
+	border-radius: 6px;
+	transition: ease 0.2s background-color;
+}
+
+.dbDataDetailsTabActive {
+	background-color: #f7cfb2;
+	filter: drop-shadow(0px 2px 2px #dbb295);
+	height: 30px;
+	margin-right: 12px;
+	padding-left: 11px;
+	padding-right: 12px;
+	display: flex;
+	align-items: center;
+	user-select: none;
+	cursor: default;
+	border-radius: 6px;
+}
+
+.dbDataDetailsTab:hover {
+	background-color: #fff3ec;
+	cursor: pointer;
+}
+
+.tabIcon {
+	padding-right: 4px;
+}
+
+#loginTip {
+	padding-top: 32px;
+	font-size: 11pt;
+	font-weight: bold;
+	color:#8f3d06;
+}
+
+#usernameSelect {
+	background-color: #f7cfb2;
+	height: 36px;
+	display: flex;
+	align-items: center;
+	border-radius: 20px;
+	font-size: 10pt;
+	border: none;
+	transition: background-color 0.2s ease;
+	width: 101.3%;
+	padding-left: 12px;
+	color:#8f3d06;
+}
+
+#passwordInput {
+	background-color: #f7cfb2;
+	height: 34px;
+	display: flex;
+	align-items: center;
+	width: 98%;
+	border-radius: 20px;
+	padding-left: 12px;
+	font-size: 10pt;
+	border: none;
+	transition: background-color 0.2s ease;
+}
+
+#usernameSelect:hover, #passwordInput:hover {
+	background-color:#fde4cf;
+}
+
+#usernameSelect:hover {
+	cursor: pointer;
+}
+
+#inputContainer {
+	width: 75%;
+}
+
+.loginLabel {
+	font-size: 8pt;
+	color:#8f3d06;
+	margin-top: 32px;
+	margin-bottom: 8px;
+}
+
+.loginButton {
+	height: 36px;
+	display: flex;
+	align-items: center;
+	border-radius: 20px;
+	background-color:#ff9854;
+	font-weight: normal;
+	font-size: 10pt;
+	cursor: default;
+	transition: background-color ease 0.2s;
+	user-select: none;
+	padding-left: 64px;
+	padding-right: 64px;
+	margin-top: 32px;
+	color: white;
+}
+
+.loginButton:hover {
+	background-color: #ffbd8e;
+	cursor: pointer;
+}
+
+.forgotPassword {
+	font-size: 9pt;
+	color:#8f3d06;
+	margin-top: 24px;
+}
+
+.forgotPassword:hover {
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+#loginErrorMessage {
+	font-size: 10pt;
+	color: #ff6600;
+	margin-top: 16px;
+}
+
+#userAvatar {
+	height: 38px;
+	width: 38px;
+	background-color: #f18740;
+	border-radius: 20px;
+	color: white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-weight: normal;
+	cursor: default;
+	user-select: none;
+	transition: background-color ease 0.2s;
+}
+
+#userAvatar:hover {
+	cursor: pointer;
+	background-color: #ffa569;
+}
