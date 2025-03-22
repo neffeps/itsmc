@@ -1,9 +1,9 @@
 function logout() {
-    fetch("/api/logout.php", { method: "POST" })
+    fetch("/itsmc/api/logout.php", { method: "POST" })
         .then(response => response.json())
         .then(data => {
             if (data.success) {
-                window.location.href = "/pages/login.htm"; // Przekierowanie
+                window.location.href = "/itsmc/pages/login.htm"; // Przekierowanie
             } else {
                 console.error("Błąd podczas wylogowania:", data.error);
             }

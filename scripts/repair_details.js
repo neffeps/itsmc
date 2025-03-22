@@ -1,7 +1,7 @@
 function repair_details(id) {
 	auth_check();
 	viewMode = 'details';
-	fetch('/api/repair_details.php?id='+id)
+	fetch('/itsmc/api/repair_details.php?id='+id)
  	.then(response => response.json())
   	.then(data => {
 		if (data.error) {

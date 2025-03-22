@@ -1,9 +1,9 @@
 function auth_check() {
-    fetch("/api/auth_check.php")
+    fetch("/itsmc/api/auth_check.php")
         .then(response => response.json())
         .then(data => {
             if (!data.auth) {
-                window.location.href = "/pages/login.htm";
+                window.location.href = "/itsmc/pages/login.htm";
             }
             else {
                 username = data.username;

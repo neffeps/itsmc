@@ -1,7 +1,7 @@
 function repair_list() {
 	auth_check();
 	viewMode = "list";
-	fetch('/api/repairs.php')
+	fetch('/itsmc/api/repairs.php')
 	.then(response => response.json())
 	.then(data => {
 		if (data.error) {
