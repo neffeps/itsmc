@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", getUsers);
 
 function getUsers() {
-    fetch("/itsmc/api/users.php")
+    fetch("neffeps.42web.io/api/users.php")
         .then(response => response.json())
         .then(data => {
             const usernameSelect = document.getElementById("usernameSelect");
@@ -19,7 +19,7 @@ function login() {
     const username = document.getElementById("usernameSelect").value;
     const password = document.getElementById("passwordInput").value;
 
-    fetch("/api/login.php", {
+    fetch("neffeps.42web.io/api/login.php", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username, password })
@@ -27,7 +27,7 @@ function login() {
     .then(response => response.json())
     .then(data => {
         if (data.success) {
-            window.location.href = "/itsmc/pages/internal_repairs.htm";
+            window.location.href = "neffeps.42web.io/pages/internal_repairs.htm";
         }
         else {
             document.getElementById("loginError").textContent = data.error;

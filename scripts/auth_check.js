@@ -1,9 +1,9 @@
 function auth_check() {
-    fetch("/itsmc/api/auth_check.php")
+    fetch("neffeps.42web.io/api/auth_check.php")
         .then(response => response.json())
         .then(data => {
             if (!data.auth) {
-                window.location.href = "/itsmc/pages/login.htm";
+                window.location.href = "neffeps.42web.io/pages/login.htm";
             }
             else {
                 username = data.username;

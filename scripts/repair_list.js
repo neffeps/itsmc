@@ -1,7 +1,7 @@
 function repair_list() {
 	auth_check();
 	viewMode = "list";
-	fetch('/itsmc/api/repairs.php')
+	fetch('neffeps.42web.io/api/repairs.php')
 	.then(response => response.json())
 	.then(data => {
 		if (data.error) {
