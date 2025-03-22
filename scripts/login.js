@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", getUsers);
 
 function getUsers() {
-    fetch("https://neffeps.42web.io/api/users.php")
+    fetch("http://neffeps.42web.io/api/users.php")
         .then(response => response.json())
         .then(data => {
             const usernameSelect = document.getElementById("usernameSelect");
@@ -19,7 +19,7 @@ function login() {
     const username = document.getElementById("usernameSelect").value;
     const password = document.getElementById("passwordInput").value;
 
-    fetch("https://neffeps.42web.io/api/login.php", {
+    fetch("http://neffeps.42web.io/api/login.php", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username, password })

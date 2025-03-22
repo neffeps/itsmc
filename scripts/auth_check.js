@@ -1,5 +1,5 @@
 function auth_check() {
-    fetch("https://neffeps.42web.io/api/auth_check.php")
+    fetch("http://neffeps.42web.io/api/auth_check.php")
         .then(response => response.json())
         .then(data => {
             if (!data.auth) {

@@ -1,5 +1,5 @@
 function logout() {
-    fetch("https://neffeps.42web.io/api/logout.php", { method: "POST" })
+    fetch("http://neffeps.42web.io/api/logout.php", { method: "POST" })
         .then(response => response.json())
         .then(data => {
             if (data.success) {
