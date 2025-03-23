@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", getUsers);
 function getUsers() {
     fetch("https://neffeps.x10.mx/api/users.php", {
 		method: "GET",
-    	credentials: "include"
 	})
         .then(response => response.json())
         .then(data => {
