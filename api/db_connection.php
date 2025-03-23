@@ -1,8 +1,8 @@
 <?php
-    $host = "sql112.infinityfree.com";
-    $db_name = "if0_38581725_itsmc_admin";
-    $username = "if0_38581725";
-    $password = "Diaxymc12";
+    $host = "localhost";
+    $db_name = "ofbsthnt_itsmc_admin";
+    $username = "ofbsthnt_itsmc_admin";
+    $password = "Yy2GkDcnattndP";
 
     try { //próba połączenia
         $db_connection = new PDO("mysql:host=$host;dbname=$db_name;charset=utf8", $username, $password);
