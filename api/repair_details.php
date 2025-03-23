@@ -3,7 +3,7 @@
     require_once "db_connection.php";
         
     header("Content-Type: application/json");
-    header("Access-Control-Allow-Origin: *"); // Pozwala na dostęp ze wszystkich domen
+    header("Access-Control-Allow-Origin: https://neffeps.github.io"); // Pozwala na dostęp ze wszystkich domen
     header("Access-Control-Allow-Methods: GET, POST, OPTIONS"); // Dozwolone metody
     header("Access-Control-Allow-Headers: Content-Type, Authorization"); // Dozwolone nagłówki
 
