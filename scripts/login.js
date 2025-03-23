@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", getUsers);
 
 function getUsers() {
-    fetch("https://cors-anywhere.herokuapp.com/https://neffeps.42web.io/api/users.php")
+    fetch("https://neffeps.42web.io/api/users.php")
         .then(response => response.json())
         .then(data => {
             const usernameSelect = document.getElementById("usernameSelect");
