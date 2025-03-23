@@ -1,5 +1,8 @@
 function auth_check() {
-    fetch("https://neffeps.x10.mx/api/auth_check.php")
+    fetch("https://neffeps.x10.mx/api/auth_check.php", {
+		method: "GET",
+    	credentials: "include"
+	})
         .then(response => response.json())
         .then(data => {
             if (!data.auth) {

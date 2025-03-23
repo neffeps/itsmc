@@ -1,11 +1,13 @@
-git<?php
-    session_start();
+<?php
     require_once 'db_connection.php';
 
     header('Content-Type: application/json');
-    header("Access-Control-Allow-Origin: https://neffeps.github.io"); // Pozwala na dostęp ze wszystkich domen
-    header("Access-Control-Allow-Methods: GET, POST, OPTIONS"); // Dozwolone metody
-    header("Access-Control-Allow-Headers: Content-Type, Authorization"); // Dozwolone nagłówki
+    header("Access-Control-Allow-Credentials: true"); 
+    header("Access-Control-Allow-Origin: https://neffeps.github.io");
+    header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
+    header("Access-Control-Allow-Headers: Content-Type, Authorization");
+
+    session_start();
 
     if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
         http_response_code(200);

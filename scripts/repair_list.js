@@ -1,7 +1,10 @@
 function repair_list() {
 	auth_check();
 	viewMode = "list";
-	fetch('https://neffeps.x10.mx/api/repairs.php')
+	fetch('https://neffeps.x10.mx/api/repairs.php', {
+		method: "GET",
+    	credentials: "include"
+	})
 	.then(response => response.json())
 	.then(data => {
 		if (data.error) {
