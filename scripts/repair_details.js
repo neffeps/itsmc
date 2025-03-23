@@ -1,7 +1,7 @@
 function repair_details(id) {
 	auth_check();
 	viewMode = 'details';
-	fetch('http://neffeps.42web.io/api/repair_details.php?id='+id)
+	fetch('https://neffeps.42web.io/api/repair_details.php?id='+id)
  	.then(response => response.json())
   	.then(data => {
 		if (data.error) {

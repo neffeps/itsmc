@@ -1,7 +1,7 @@
 function repair_list() {
 	auth_check();
 	viewMode = "list";
-	fetch('http://neffeps.42web.io/api/repairs.php')
+	fetch('https://neffeps.42web.io/api/repairs.php')
 	.then(response => response.json())
 	.then(data => {
 		if (data.error) {
