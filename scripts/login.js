@@ -27,7 +27,7 @@ function login() {
     .then(response => response.json())
     .then(data => {
         if (data.success) {
-            window.location.href = "/itsmc/pages/internal_repairs.htm";
+            window.location.href = "https://neffeps.github.io/itsmc/pages/internal_repairs.htm";
         }
         else {
             document.getElementById("loginError").textContent = data.error;

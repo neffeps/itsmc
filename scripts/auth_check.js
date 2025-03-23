@@ -3,7 +3,7 @@ function auth_check() {
         .then(response => response.json())
         .then(data => {
             if (!data.auth) {
-                window.location.href = "/itsmc/pages/login.htm";
+                window.location.href = "https://neffeps.github.io/itsmc/pages/login.htm";
             }
             else {
                 username = data.username;

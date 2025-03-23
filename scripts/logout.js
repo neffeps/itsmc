@@ -3,7 +3,7 @@ function logout() {
         .then(response => response.json())
         .then(data => {
             if (data.success) {
-                window.location.href = "/itsmc/pages/login.htm"; // Przekierowanie
+                window.location.href = "https://neffeps.github.io/itsmc/pages/login.htm"; // Przekierowanie
             } else {
                 console.error("Błąd podczas wylogowania:", data.error);
             }
