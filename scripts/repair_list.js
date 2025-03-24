@@ -1,5 +1,5 @@
-const currentStatus = document.getElementById('#currentStatus');
 function repair_list() {
+	const currentStatus = document.getElementById('#currentStatus');
 	currentStatus.style.display = "flex";
 	auth_check();
 	viewMode = "list";
@@ -166,7 +166,7 @@ function repair_list() {
 	});
 	currentStatus.style.display = "none";
 }
-repair_list();
+document.addEventListener("DOMContentLoaded", repair_list());
 /*fetch('countObjects.php')
 		.then(response => response.json())
 		.then(data => {
