@@ -1,5 +1,4 @@
 function repair_list() {
-	const currentStatus = document.getElementById('#currentStatus');
 	currentStatus.style.display = "flex";
 	auth_check();
 	viewMode = "list";
