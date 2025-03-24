@@ -7,7 +7,8 @@ function logout() {
         .then(data => {
             if (data.success) {
                 window.location.href = "https://neffeps.github.io/itsmc/pages/login.htm";
-            } else {
+            } 
+            else {
                 console.error("Błąd podczas wylogowania:", data.error);
             }
         })

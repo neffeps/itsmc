@@ -531,3 +531,10 @@ td {
 	cursor: pointer;
 	background-color: #ffa569;
 }
+
+#currentStatus {
+	position: absolute;
+	top: 8px;
+	width: 160px;
+	height: 64px;
+}
