@@ -1,3 +1,4 @@
+const currentStatus = document.getElementById('#currentStatus');
 function repair_list() {
 	currentStatus.style.display = "flex";
 	auth_check();
