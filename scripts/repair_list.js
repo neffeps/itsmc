@@ -1,4 +1,6 @@
 function repair_list() {
+	const currentStatus = document.getElementById('#currentStatus');
+	currentStatus.style.display = "flex";
 	auth_check();
 	viewMode = "list";
 	fetch('https://neffeps.x10.mx/api/repairs.php', {
@@ -162,6 +164,7 @@ function repair_list() {
 	.catch(error => {
 		console.error('Błąd podczas pobierania danych: ', error);
 	});
+	currentStatus.style.display = "none";
 }
 repair_list();
 /*fetch('countObjects.php')
