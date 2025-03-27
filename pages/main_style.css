@@ -8,6 +8,7 @@
 	cursor: default;
 	user-select:none;
 	margin-bottom: 8px;
+	margin-left: 28px;
 }
 
 #IT {color: #ff6600;}
@@ -19,6 +20,7 @@
 	width: 240px;
 	flex-shrink: 0;
 	overflow: auto;
+	margin-top: 56px;
 }
 
 body {
@@ -85,6 +87,7 @@ body {
 	overflow: hidden;
 	background-color: #fff3ec;
 	font-family: "Roboto";
+	margin-top: 56px;
 }
 
 #topPanel {
@@ -92,8 +95,10 @@ body {
 	background-color: #fff3ec;
 	display: flex;
 	align-items: center;
-	flex-direction: row-reverse;
+	flex-direction: row;
 	padding-right: 8px;
+	position: fixed;
+	width: 100%;
 }
 
 #dataTableHeader {
@@ -525,6 +530,7 @@ td {
 	cursor: default;
 	user-select: none;
 	transition: background-color ease 0.2s;
+	margin-right: 8px;
 }
 
 #userAvatar:hover {
@@ -538,7 +544,7 @@ td {
 	width: 160px;
 	height: 40px;
 	left: 45vw;
-	background-color: white;
+	background-color: #ffffff;
 	font-size: 10pt;
 	display: none;
 	align-items: center;
@@ -549,4 +555,30 @@ td {
 
 #loadingCircle {
 	transform: scaleX(-1);
+}
+
+#searchBar {
+	background-color: #ffffff;
+	width: 584px;
+	border-radius: 20px;
+	height: 32px;
+	font-family: "Roboto";
+	font-size: 10pt;
+	color: #aaaaaa;
+	display: flex;
+	align-items: center;
+	padding-left: 16px;
+}
+
+.topPanelSection {
+	width: 33.3333%;
+	display: flex;
+}
+
+#avatarSection {
+	justify-content: right;
+}
+
+#searchBarSection {
+	justify-content: center;
 }

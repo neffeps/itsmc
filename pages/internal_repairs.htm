@@ -13,10 +13,25 @@
 		<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
 	</head>
 	<body>
-		<div id='sidePanel'>
-			<div id='logo'>
-				<span id='IT'>IT</span><span id='smc'>smc</span><span id='verId'>v.23022025-a</span>
+		<div id='topPanel'>
+			<div class="topPanelSection" id="logoSection">
+				<div id='logo'>
+					<span id='IT'>IT</span><span id='smc'>smc</span><span id='verId'>v.23022025-a</span>
+				</div>
 			</div>
+			<div class="topPanelSection" id="searchBarSection">
+				<div id="searchBar">Szukaj w systemie</div>
+			</div>
+				<div id="currentStatus">
+					<img id="loadingCircle" src="https://neffeps.github.io/itsmc/resources/loading-circle.gif" width="16px"/>
+					&nbsp;&nbsp;Pobieranie danych
+				</div>
+			<div class="topPanelSection" id="avatarSection">
+				<div id='userAvatar' onclick="logout()" title="Wyloguj się"></div>
+				<div id='userOptions'></div>
+			</div>
+		</div>
+		<div id='sidePanel'>
 			<div class='separator'>NARZĘDZIA GŁÓWNE</div>
 			<div class='menuButton'>Pulpit</div>
 			<div class='menuButton'>Oś czasu</div>
@@ -36,14 +51,6 @@
 			<div class='menuButton'>Użytkownicy</div>
 		</div>
 		<div id='dataBody'>
-			<div id='topPanel'>
-				<div id="currentStatus">
-					<img id="loadingCircle" src="https://neffeps.github.io/itsmc/resources/loading-circle.gif" width="16px"/>
-					&nbsp;&nbsp;Pobieranie danych
-				</div>
-				<div id='userAvatar' onclick="logout()" title="Wyloguj się"></div>
-				<div id='userOptions'></div>
-			</div>
 			<div id='dbDataTableContainer'>
 				<table id='dbDataTable'>
 					<colgroup>
@@ -74,13 +81,13 @@
 				<div class='dbDataDetailsHeader'>
 					<div class='dbDataDetailsHeaderLeft'>
 						<div class='dbDataDetailsBackButton' onclick="back_to_list()"><</div>
-						<div class='dbDataDetailsHeaderIcon'><img src='/resources/inRepairs-icon32px.png' width='24px'/></div>
+						<div class='dbDataDetailsHeaderIcon'><img src='https://neffeps.github.io/itsmc/resources/24px/inRepairs-icon24px.png' width='24px'/></div>
 						<div class='dbDataDetailsHeaderText'>Szczegóły naprawy:&nbsp;</div>
 						<div class='dbDataDetailsHeaderText' id='dbDataDetailsHeaderId'></div>
 					</div>
 					<div class='dbDataDetailsHeaderRight'>
 						<div class='dbDataDetailsEdit' onclick=''>
-							<img src='/resources/edit-icon16px.png' id='editIcon'/>
+							<img src='https://neffeps.github.io/itsmc/resources/16px/edit-icon16px.png' id='editIcon'/>
 							<span id='editText'>Edytuj</span>
 						</div>
 						<div id='previousObject' class='dbDataDetailsPrevious'><</div>
@@ -144,11 +151,11 @@
 					<div class='dbDataDetailsDescriptionField' id='dbDataDetailsRepairDescription'></div>
 				</div>
 				<div class='dbDataDetailsTabsContainer'>
-					<div class='dbDataDetailsTabActive'><img src='/resources/comments-icon16px.png' class='tabIcon'/>Komentarze</div>
-					<div class='dbDataDetailsTab'><img src='/resources/photos-icon16px.png' class='tabIcon'/>Zdjęcia</div>
-					<div class='dbDataDetailsTab'><img src='/resources/files-icon16px.png' class='tabIcon'/>Pliki</div>
-					<div class='dbDataDetailsTab'><img src='/resources/costs-icon16px.png' class='tabIcon'/>Wpłaty</div>
-					<div class='dbDataDetailsTab'><img src='/resources/costs2-icon16px.png' class='tabIcon'/>Koszty</div>
+					<div class='dbDataDetailsTabActive'><img src='https://neffeps.github.io/itsmc/resources/16px/comments-icon16px.png' class='tabIcon'/>Komentarze</div>
+					<div class='dbDataDetailsTab'><img src='https://neffeps.github.io/itsmc/resources/16px/photos-icon16px.png' class='tabIcon'/>Zdjęcia</div>
+					<div class='dbDataDetailsTab'><img src='https://neffeps.github.io/itsmc/resources/16px/files-icon16px.png' class='tabIcon'/>Pliki</div>
+					<div class='dbDataDetailsTab'><img src='https://neffeps.github.io/itsmc/resources/16px/payments-icon16px.png' class='tabIcon'/>Wpłaty</div>
+					<div class='dbDataDetailsTab'><img src='https://neffeps.github.io/itsmc/resources/16px/costs-icon16px.png' class='tabIcon'/>Koszty</div>
 				</div>
 			</div>
 		</div>
