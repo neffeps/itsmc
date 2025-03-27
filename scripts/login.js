@@ -20,6 +20,7 @@ function getUsers() {
 }
 
 function login() {
+    showCurrentStatusPopup();
     const username = document.getElementById("usernameSelect").value;
     const password = document.getElementById("passwordInput").value;
 
@@ -31,6 +32,7 @@ function login() {
     })
     .then(response => response.json())
     .then(data => {
+        hideCurrentStatusPopup();
         if (data.success) {
             window.location.href = "https://neffeps.github.io/itsmc/pages/internal_repairs.htm";
         }
