@@ -8,6 +8,7 @@ function repair_list() {
 	})
 	.then(response => response.json())
 	.then(data => {
+		hideCurrentStatusPopup();
 		if (data.error) {
 			console.error(data.error);
 			return;
@@ -165,7 +166,6 @@ function repair_list() {
 	});
 }
 repair_list();
-hideCurrentStatusPopup();
 /*fetch('countObjects.php')
 		.then(response => response.json())
 		.then(data => {
