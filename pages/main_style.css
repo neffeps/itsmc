@@ -228,6 +228,9 @@ td {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+}
+
+#dbDataDetailsHeaderIconImg {
 	filter: invert();
 }
 
