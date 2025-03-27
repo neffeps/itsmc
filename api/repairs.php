@@ -30,8 +30,7 @@
     $query = "SELECT clients.first_name, clients.last_name, 
 	eq_company, eq_model, eq_damage_desc, repair_desc, 
 	repair_status, internal_repairs.id FROM internal_repairs
-    ORDER BY internal_repairs.id 
-    JOIN clients ON clients.id = internal_repairs.client_id";
+    JOIN clients ON clients.id = internal_repairs.client_id ORDER BY internal_repairs.id";
     $stmt = $db_connection->prepare($query);
     $stmt->execute();
     $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
