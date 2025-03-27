@@ -27,10 +27,10 @@ body {
 	margin: 0px;
 	padding: 0px;
 	display: flex;
+	font-family: "Roboto";
 }
 
 .separator {
-	font-family: "Roboto";
 	font-size: 8pt;
 	padding-left: 12px;
 	padding-top: 4px;
@@ -41,7 +41,6 @@ body {
 }
 
 .menuButton {
-	font-family: "Roboto";
 	font-size: 10pt;
 	padding-left: 16px;
 	padding-top: 6px;
@@ -64,7 +63,6 @@ body {
 }
 
 .selectedMenuButton {
-	font-family: "Roboto";
 	font-size: 10pt;
 	padding-left: 16px;
 	padding-top: 6px;
@@ -86,7 +84,6 @@ body {
 	flex-grow: 1;
 	overflow: hidden;
 	background-color: #fff3ec;
-	font-family: "Roboto";
 	margin-top: 56px;
 }
 
@@ -555,7 +552,6 @@ td {
 	justify-content: center;
 	border-radius: 20px;
 	filter: drop-shadow(0px 3px 3px rgba(233, 208, 191, 0.75));
-	font-family: "Roboto";
 }
 
 #loadingCircle {
@@ -567,7 +563,6 @@ td {
 	width: 584px;
 	border-radius: 20px;
 	height: 32px;
-	font-family: "Roboto";
 	font-size: 10pt;
 	color: #aaaaaa;
 	display: flex;
