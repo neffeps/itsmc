@@ -1,4 +1,5 @@
 function repair_details(id) {
+	showCurrentStatusPopup();
 	auth_check();
 	viewMode = 'details';
 	fetch('https://neffeps.x10.mx/api/repair_details.php?id='+id, {
@@ -7,6 +8,7 @@ function repair_details(id) {
 	})
  	.then(response => response.json())
   	.then(data => {
+		hideCurrentStatusPopup();
 		if (data.error) {
 			console.error(data.error);
 			return;
