@@ -163,7 +163,6 @@ function repair_list() {
 		console.error('Błąd podczas pobierania danych: ', error);
 	});
 }
-document.addEventListener("load", loadCurrentStatusPopup());
 showCurrentStatusPopup();
 repair_list();
 hideCurrentStatusObject();
