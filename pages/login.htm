@@ -14,7 +14,10 @@
 </head>
 <body>
     <div class="loginPage">
-        <div id="currentStatus"></div>
+        <div id="currentStatus">
+            <img id="loadingCircle" src="https://neffeps.github.io/itsmc/resources/loading-circle.gif" width="16px"/>
+            &nbsp;&nbsp;Pobieranie danych
+        </div>
         <div class="loginContainer">
             <div class="loginPageLogo"><span id="IT">IT</span><span id="smc">smc</span></div>
             <div class="loginLabel">Nazwa użytkownika</div>
@@ -26,5 +29,6 @@
             <div id="loginError"></div>
         </div>
     </div>
+    <script src="/itsmc/scripts/current_status.js"></script>
     <script src="/itsmc/scripts/login.js"></script>
 </body>

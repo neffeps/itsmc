@@ -1,11 +1,13 @@
 document.addEventListener("DOMContentLoaded", getUsers);
 
 function getUsers() {
+    showCurrentStatusPopup();
     fetch("https://neffeps.x10.mx/api/users.php", {
 		method: "GET",
 	})
         .then(response => response.json())
         .then(data => {
+            hideCurrentStatusPopup();
             const usernameSelect = document.getElementById("usernameSelect");
             data.forEach(user => {
                 const option = document.createElement("option");

@@ -113,3 +113,22 @@ select:focus, input:focus {
 #usernameSelect:hover {
 	cursor: pointer;
 }
+
+#currentStatus {
+	position: absolute;
+	top: 8px;
+	width: 160px;
+	height: 40px;
+	left: 45vw;
+	background-color: white;
+	font-size: 10pt;
+	display: none;
+	align-items: center;
+	justify-content: center;
+	border-radius: 20px;
+	filter: drop-shadow(0px 3px 3px rgba(233, 208, 191, 0.75));
+}
+
+#loadingCircle {
+	transform: scaleX(-1);
+}
