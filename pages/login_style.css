@@ -1,13 +1,13 @@
 .loginContainer {
 	background-color: #fff3ec;
 	width: 30%;
-	height: 60%;
 	display: flex;
 	border-radius: 24px;
 	filter: drop-shadow(0px 3px 3px #e9c3a8);
 	align-items: center;
 	flex-direction: column;
 	justify-content: flex-start;
+	padding-bottom: 48px;
 }
 
 .loginPage {
