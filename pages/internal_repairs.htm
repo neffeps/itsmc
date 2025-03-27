@@ -164,8 +164,8 @@
 			let dbDataTableContainer = document.querySelector("#dbDataTableContainer");
 			let dbDataDetailsContainer = document.querySelector("#dbDataDetailsContainer");
 			function sidePanelHeightOnResize() {
-				let windowHeight = document.documentElement.clientHeight;
-				sidePanel.style.height = windowHeight + "px";
+				let windowHeightMinusTopPanel = document.documentElement.clientHeight - 56;
+				sidePanel.style.height = windowHeightMinusTopPanel + "px";
 			}
 			function dbDataWidthOnResize() {
 				let windowWidthMinusSidePanel = document.documentElement.clientWidth - 240;
@@ -173,7 +173,7 @@
 				dbDataDetailsContainer.style.width = windowWidthMinusSidePanel + "px";
 			}
 			function dbDataHeightOnResize() {
-				let windowHeightMinusTopPanel = document.documentElement.clientHeight - 112;
+				let windowHeightMinusTopPanel = document.documentElement.clientHeight - 56;
 				dbDataTableContainer.style.height = windowHeightMinusTopPanel + "px";
 				dbDataDetailsContainer.style.height = windowHeightMinusTopPanel + "px";
 			}
