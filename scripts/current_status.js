@@ -1,6 +1,4 @@
-function loadCurrentStatusPopup() {
-    const currentStatus = document.querySelector('#currentStatus');
-}
+const currentStatus = document.querySelector('#currentStatus');
 function showCurrentStatusPopup() {
     currentStatus.style.display = "flex";
 }
