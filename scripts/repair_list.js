@@ -1,6 +1,4 @@
 function repair_list() {
-	const currentStatus = document.querySelector('#currentStatus');
-	currentStatus.style.display = "flex";
 	auth_check();
 	viewMode = "list";
 	fetch('https://neffeps.x10.mx/api/repairs.php', {
@@ -164,9 +162,11 @@ function repair_list() {
 	.catch(error => {
 		console.error('Błąd podczas pobierania danych: ', error);
 	});
-	currentStatus.style.display = "none";
 }
-document.addEventListener("DOMContentLoaded", repair_list());
+document.addEventListener("load", loadCurrentStatusPopup());
+showCurrentStatusPopup();
+repair_list();
+hideCurrentStatusObject();
 /*fetch('countObjects.php')
 		.then(response => response.json())
 		.then(data => {
