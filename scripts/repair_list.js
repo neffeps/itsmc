@@ -1,4 +1,5 @@
 function repair_list() {
+	showCurrentStatusPopup();
 	auth_check();
 	viewMode = "list";
 	fetch('https://neffeps.x10.mx/api/repairs.php', {
@@ -162,10 +163,11 @@ function repair_list() {
 	.catch(error => {
 		console.error('Błąd podczas pobierania danych: ', error);
 	});
+	hideCurrentStatusObject();
 }
-showCurrentStatusPopup();
+
 repair_list();
-hideCurrentStatusObject();
+
 /*fetch('countObjects.php')
 		.then(response => response.json())
 		.then(data => {
