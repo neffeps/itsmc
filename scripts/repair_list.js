@@ -163,11 +163,9 @@ function repair_list() {
 	.catch(error => {
 		console.error('Błąd podczas pobierania danych: ', error);
 	});
-	hideCurrentStatusObject();
+	hideCurrentStatusPopup();
 }
-
 repair_list();
-
 /*fetch('countObjects.php')
 		.then(response => response.json())
 		.then(data => {
