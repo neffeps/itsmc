@@ -184,7 +184,12 @@ td {
 	user-select: none;
 }
 
-#editIcon { margin-right: 6px; }
+#editIcon { 
+	margin-right: 6px;
+	width: 16px;
+	height: 16px;
+}
+
 #editText { padding-bottom: 2px; }
 
 .dbDataDetailsNext, .dbDataDetailsPrevious {
@@ -440,6 +445,8 @@ td {
 
 .tabIcon {
 	padding-right: 4px;
+	width: 16px;
+	height: 16px;
 }
 
 #loginTip {
