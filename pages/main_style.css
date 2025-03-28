@@ -66,6 +66,8 @@ body {
 
 .menuButton img {
 	margin-right: 8px;
+	width: 16px;
+	height: 16px;
 }
 
 .selectedMenuButton img {
