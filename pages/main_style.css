@@ -590,7 +590,9 @@ td {
 	color: #aaaaaa;
 	display: flex;
 	align-items: center;
-	padding-left: 16px;
+	padding-left: 12px;
+	padding-right: 12px;
+	justify-content: space-between;
 }
 
 .topPanelSection {
@@ -604,4 +606,8 @@ td {
 
 #searchBarSection {
 	justify-content: center;
+}
+
+#searchBar img {
+	filter: opacity(0.5);
 }

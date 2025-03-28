@@ -24,20 +24,20 @@ function repair_list() {
 		const colRepairStatus = document.querySelector('#repairRepairStatus');
 		const dbDataTBody = document.querySelector('#dbDataTBody');
 
-		colRepairId.style.maxWidth = "48px";
-		colRepairId.style.minWidth = "48px";
+		colRepairId.style.maxWidth = "40px";
+		colRepairId.style.minWidth = "40px";
 		colRepairClientName.style.width = "10%";
-		colRepairClientName.style.minWidth = "144px";
+		colRepairClientName.style.minWidth = "128px";
 		colRepairEquipmentCompany.style.width = "10%";
-		colRepairEquipmentCompany.style.minWidth = "144px";
+		colRepairEquipmentCompany.style.minWidth = "128px";
 		colRepairEquipmentModel.style.width = "10%";
-		colRepairEquipmentModel.style.minWidth = "144px";
+		colRepairEquipmentModel.style.minWidth = "128px";
 		colRepairEquipmentDamageDescription.style.width = "30%";
-		colRepairEquipmentDamageDescription.style.minWidth = "288px";
+		colRepairEquipmentDamageDescription.style.minWidth = "256px";
 		colRepairEquipmentRepairDescription.style.width = "30%";
-		colRepairEquipmentRepairDescription.style.minWidth = "288px";
+		colRepairEquipmentRepairDescription.style.minWidth = "256px";
 		colRepairStatus.style.width = "10%";
-		colRepairStatus.style.minWidth = "144px";
+		colRepairStatus.style.minWidth = "128px";
 
 		let dbDataContent = '';
 		data.forEach(row => {
