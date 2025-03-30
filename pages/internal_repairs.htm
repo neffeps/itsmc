@@ -194,23 +194,15 @@
 			}
 			elementSizeHandler();
 			window.addEventListener("resize", elementSizeHandler);
-			document.addEventListener('keydown', function(event) {
-				if (viewMode == "details") {
-					if (event.key == "ArrowLeft") {
-						repair_details(previousId);
-					}
-					else if (event.key == "ArrowRight") {
-						repair_details(nextId);
-					}
-					else if (event.key == "Escape") {
-						back_to_list();
-					}
-				}
-			});
 		</script>
 		<script>
 			let username = null;
 			let viewMode = null;
+			let current_id = null;
+			let min_id = null;
+			let max_id = null;
+			let previous_id = null;
+			let next_id = null;
 		</script>
 		<script src="/itsmc/scripts/current_status.js"></script>
 		<script src="/itsmc/scripts/auth_check.js"></script>
@@ -218,5 +210,6 @@
 		<script src="/itsmc/scripts/repair_details.js"></script>
 		<script src="/itsmc/scripts/back_to_list.js"></script>
 		<script src="/itsmc/scripts/logout.js"></script>
+		<script src="/itsmc/scripts/next_previous.js"></script>
 	</body>
 </html>

@@ -40,8 +40,15 @@
     $stmt->execute();
     $repairCount = $stmt->fetch(PDO::FETCH_ASSOC);
 
+    $minMaxIdQuery = "SELECT MIN(id) AS min_id, MAX(id) AS max_id FROM internal_repairs";
+    $stmt = $db_connection->prepare($minMaxIdQuery);
+    $stmt->execute();
+    $minMaxId = $stmt->fetch(PDO::FETCH_ASSOC);
+
     $api_response = [
         "repair_count" => $repairCount["repair_count"],
+        "min_id" => $minMaxId["min_id"],
+        "max_id" => $minMaxId["max_id"],
         "data" => $data
     ];
 

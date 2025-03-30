@@ -13,6 +13,8 @@ function repair_list() {
 			console.error(api_response.error);
 			return;
 		}
+		min_id = api_response.data.min_id;
+		max_id = api_response.data.max_id;
 		dbDataDetailsContainer.style.display = "none";
 		dbDataTableContainer.style.display = "flex";
 		const colRepairId = document.querySelector('#repairId');

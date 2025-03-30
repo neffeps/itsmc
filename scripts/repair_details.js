@@ -13,6 +13,7 @@ function repair_details(id) {
 			console.error(data.error);
 			return;
 		}
+		current_id = data.id;
         const dbDataDetailsFirstName = document.querySelector('#dbDataDetailsFirstName');
 		const dbDataDetailsLastName = document.querySelector('#dbDataDetailsLastName');
 		const dbDataDetailsEmailAddresses = document.querySelector('#dbDataDetailsEmailAddresses');
