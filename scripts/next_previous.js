@@ -5,6 +5,6 @@ if (current_id == min_id) {
     previous_object.classList.add("dbDataDetailsPreviousInactive");
 }
 
-function previous_object() {
+function previousObject() {
     
 }
