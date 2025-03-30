@@ -7,10 +7,10 @@ function repair_list() {
     	credentials: "include"
 	})
 	.then(response => response.json())
-	.then(data => {
+	.then(api_response => {
 		hideCurrentStatusPopup();
-		if (data.error) {
-			console.error(data.error);
+		if (api_response.error) {
+			console.error(api_response.error);
 			return;
 		}
 		dbDataDetailsContainer.style.display = "none";
@@ -40,7 +40,7 @@ function repair_list() {
 		colRepairStatus.style.minWidth = "128px";
 
 		let dbDataContent = '';
-		data.forEach(row => {
+		api_response.data.forEach(row => {
 			if (row.repair_status == "Nieprzydzielona") {
 				dbDataContent += `
 					<tr class='dbRow' onclick=repair_details(${row.id})>

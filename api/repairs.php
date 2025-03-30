@@ -35,5 +35,15 @@
     $stmt->execute();
     $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-    echo json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
+    $countQuery = "SELECT COUNT(*) AS repair_count FROM internal_repairs";
+    $stmt = $db_connection->prepare($countQuery);
+    $stmt->execute();
+    $repairCount = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    $api_response = [
+        "repair_count" => $repairCount["repair_count"],
+        "data" => $data
+    ];
+
+    echo json_encode($api_response, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
 ?>
