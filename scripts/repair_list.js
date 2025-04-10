@@ -42,15 +42,46 @@ function repair_list() {
 		colRepairStatus.style.minWidth = "128px";
 
 		let dbDataContent = '';
+		let status_label = '';
 		api_response.data.forEach(row => {
+			if (row.status == "unassigned") {
+				status_label = "Nieprzydzielone";
+			}
+			else if (row.status == "diagnosis") {
+				status_label = "Diagnoza";
+			}
+			else if (row.status == "quoted") {
+				status_label = "Wycenione";
+			}
+			else if (row.status == "waiting_for_parts") {
+				status_label = "Oczekuje na części";
+			}
+			else if (row.status == "paused") {
+				status_label = "Wstrzymane";
+			}
+			else if (row.status == "in_repair") {
+				status_label = "W naprawie";
+			}
+			else if (row.status == "ready_for_pickup") {
+				status_label = "Gotowe do odbioru";
+			}
+			else if (row.status == "completed") {
+				status_label = "Odebrane";
+			}
+			else if (row.status == "cancelled") {
+				status_label = "Anulowane";
+			}
+			else if (row.status == "expired") {
+				status_label = "Przedawnione";
+			}
 			if (row.is_company == 0 || row.is_company == null) {
 				dbDataContent += `
-					<tr class='dbRow' onclick=repair_details(${row.id})>
+					<tr class='dbRow dbRowStatus_${row.status}' onclick=repair_details(${row.id})>
 						<td class='dbRowRoundedLeft'>${row.id}</td>
 						<td>${row.first_name} ${row.last_name}</td>
 						<td>${row.brand}</td>
 						<td>${row.model}</td>
-						<td>${row.status}</td>
+						<td>${status_label}</td>
 						<td>${row.damage_description}</td>
                 		<td class='dbRowRoundedRight'>${row.repair_description}</td>
 					</tr>
@@ -63,7 +94,7 @@ function repair_list() {
 						<td>${row.company_name}</td>
 						<td>${row.brand}</td>
 						<td>${row.model}</td>
-						<td>${row.status}</td>
+						<td>${status_label}</td>
 						<td>${row.damage_description}</td>
                 		<td class='dbRowRoundedRight'>${row.repair_description}</td>
 					</tr>
