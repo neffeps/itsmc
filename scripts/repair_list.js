@@ -43,107 +43,16 @@ function repair_list() {
 
 		let dbDataContent = '';
 		api_response.data.forEach(row => {
-			if (row.repair_status == "Nieprzydzielona") {
+			if (row.is_company == 0 || row.is_company == null) {
 				dbDataContent += `
 					<tr class='dbRow' onclick=repair_details(${row.id})>
 						<td class='dbRowRoundedLeft'>${row.id}</td>
-				    	<td>${row.first_name} ${row.last_name}</td>
-						<td>${row.eq_company}</td>
-						<td>${row.eq_model}</td>
-						<td>${row.repair_status}</td>
-						<td>${row.eq_damage_desc}</td>
-                    	<td class='dbRowRoundedRight'>${row.repair_desc}</td>
-					</tr>
-				`;
-			}
-			else if (row.repair_status == "Otwarta") {
-				dbDataContent += `
-					<tr class='dbRow dbRowStatusOpen' onclick=repair_details(${row.id})>
-						<td class='dbRowRoundedLeft'>${row.id}</td>
-				    	<td>${row.first_name} ${row.last_name}</td>
-						<td>${row.eq_company}</td>
-						<td>${row.eq_model}</td>
-						<td>${row.repair_status}</td>
-						<td>${row.eq_damage_desc}</td>
-                    	<td class='dbRowRoundedRight'>${row.repair_desc}</td>
-					</tr>
-				`;
-			}
-			else if (row.repair_status == "Aktualnie wykonywana") {
-				dbDataContent += `
-					<tr class='dbRow dbRowStatusInProgress' onclick=repair_details(${row.id})>
-						<td class='dbRowRoundedLeft'>${row.id}</td>
-				    	<td>${row.first_name} ${row.last_name}</td>
-						<td>${row.eq_company}</td>
-						<td>${row.eq_model}</td>
-						<td>${row.repair_status}</td>
-						<td>${row.eq_damage_desc}</td>
-                    	<td class='dbRowRoundedRight'>${row.repair_desc}</td>
-					</tr>
-				`;
-			}
-			else if (row.repair_status == "Oczekuje na części") {
-				dbDataContent += `
-					<tr class='dbRow dbRowStatusWaitingForParts' onclick=repair_details(${row.id})>
-						<td class='dbRowRoundedLeft'>${row.id}</td>
-				    	<td>${row.first_name} ${row.last_name}</td>
-						<td>${row.eq_company}</td>
-						<td>${row.eq_model}</td>
-						<td>${row.repair_status}</td>
-						<td>${row.eq_damage_desc}</td>
-                    	<td class='dbRowRoundedRight'>${row.repair_desc}</td>
-					</tr>
-				`;
-			}
-			else if (row.repair_status == "Oczekuje na decyzję") {
-				dbDataContent += `
-					<tr class='dbRow dbRowStatusWaitingForDecision' onclick=repair_details(${row.id})>
-						<td class='dbRowRoundedLeft'>${row.id}</td>
-				    	<td>${row.first_name} ${row.last_name}</td>
-						<td>${row.eq_company}</td>
-						<td>${row.eq_model}</td>
-						<td>${row.repair_status}</td>
-						<td>${row.eq_damage_desc}</td>
-                    	<td class='dbRowRoundedRight'>${row.repair_desc}</td>
-					</tr>
-				`;
-			}
-			else if (row.repair_status == "Wykonana") {
-				dbDataContent += `
-					<tr class='dbRow dbRowStatusCompleted' onclick=repair_details(${row.id})>
-						<td class='dbRowRoundedLeft'>${row.id}</td>
-				    	<td>${row.first_name} ${row.last_name}</td>
-						<td>${row.eq_company}</td>
-						<td>${row.eq_model}</td>
-						<td>${row.repair_status}</td>
-						<td>${row.eq_damage_desc}</td>
-                    	<td class='dbRowRoundedRight'>${row.repair_desc}</td>
-					</tr>
-				`;
-			}
-			else if (row.repair_status == "Niewykonana") {
-				dbDataContent += `
-					<tr class='dbRow dbRowStatusNotCompleted' onclick=repair_details(${row.id})>
-						<td class='dbRowRoundedLeft'>${row.id}</td>
-				    	<td>${row.first_name} ${row.last_name}</td>
-						<td>${row.eq_company}</td>
-						<td>${row.eq_model}</td>
-						<td>${row.repair_status}</td>
-						<td>${row.eq_damage_desc}</td>
-                    	<td class='dbRowRoundedRight'>${row.repair_desc}</td>
-					</tr>
-				`;
-			}
-			else if (row.repair_status == "Zamknięta") {
-				dbDataContent += `
-					<tr class='dbRow dbRowStatusClosed' onclick=repair_details(${row.id})>
-						<td class='dbRowRoundedLeft'>${row.id}</td>
-				    	<td>${row.first_name} ${row.last_name}</td>
-						<td>${row.eq_company}</td>
-						<td>${row.eq_model}</td>
-						<td>${row.repair_status}</td>
-						<td>${row.eq_damage_desc}</td>
-                    	<td class='dbRowRoundedRight'>${row.repair_desc}</td>
+						<td>${row.first_name} ${row.last_name}</td>
+						<td>${row.brand}</td>
+						<td>${row.model}</td>
+						<td>${row.status}</td>
+						<td>${row.damage_description}</td>
+                		<td class='dbRowRoundedRight'>${row.repair_description}</td>
 					</tr>
 				`;
 			}
@@ -151,12 +60,12 @@ function repair_list() {
 				dbDataContent += `
 					<tr class='dbRow' onclick=repair_details(${row.id})>
 						<td class='dbRowRoundedLeft'>${row.id}</td>
-				    	<td>${row.first_name} ${row.last_name}</td>
-						<td>${row.eq_company}</td>
-						<td>${row.eq_model}</td>
-						<td>${row.repair_status}</td>
-						<td>${row.eq_damage_desc}</td>
-                    	<td class='dbRowRoundedRight'>${row.repair_desc}</td>
+						<td>${row.company_name}</td>
+						<td>${row.brand}</td>
+						<td>${row.model}</td>
+						<td>${row.status}</td>
+						<td>${row.damage_description}</td>
+                		<td class='dbRowRoundedRight'>${row.repair_description}</td>
 					</tr>
 				`;
 			}
@@ -168,12 +77,3 @@ function repair_list() {
 	});
 }
 repair_list();
-/*fetch('countObjects.php')
-		.then(response => response.json())
-		.then(data => {
-			if (data.error) {
-				console.error(data.error);
-				return;
-			}
-			maxId = data.inRepairCount;
-		});*/
