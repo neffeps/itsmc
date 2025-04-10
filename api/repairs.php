@@ -27,20 +27,32 @@
         exit();
     }
 
-    $query = "SELECT clients.first_name, clients.last_name, 
-	eq_company, eq_model, eq_damage_desc, repair_desc, 
-	repair_status, internal_repairs.id FROM internal_repairs
-    JOIN clients ON clients.id = internal_repairs.client_id ORDER BY internal_repairs.id ASC";
+    $query = "SELECT  
+    local_services.damage_description,
+    local_services.repair_description, 
+    local_services.id,   
+    local_services.status, 
+    local_services.type, 
+    customers.company_name, 
+    customers.first_name, 
+    customers.last_name, 
+    devices.brand, 
+    devices.model, 
+    devices.type 
+    FROM local_services 
+    JOIN customers ON customers.id = local_services.customer_id 
+    JOIN devices ON devices.id = local_services.device_id 
+    ORDER BY local_services.id ASC;";
     $stmt = $db_connection->prepare($query);
     $stmt->execute();
     $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-    $countQuery = "SELECT COUNT(*) AS repair_count FROM internal_repairs";
+    $countQuery = "SELECT COUNT(*) AS repair_count FROM local_services";
     $stmt = $db_connection->prepare($countQuery);
     $stmt->execute();
     $repairCount = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    $minMaxIdQuery = "SELECT MIN(id) AS min_id, MAX(id) AS max_id FROM internal_repairs";
+    $minMaxIdQuery = "SELECT MIN(id) AS min_id, MAX(id) AS max_id FROM local_services";
     $stmt = $db_connection->prepare($minMaxIdQuery);
     $stmt->execute();
     $minMaxId = $stmt->fetch(PDO::FETCH_ASSOC);
