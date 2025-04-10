@@ -370,32 +370,44 @@ td {
 	border-bottom-right-radius: 12px;
 }
 
-.dbRowStatusOpen {
-	background-color: #ffede1;
+.dbRowStatus_unassigned {
+	background-color: #fecaca;
 }
 
-.dbRowStatusInProgress {
-	background-color: #fffbe1;
+.dbRowStatus_diagnosis {
+	background-color: #ccf1fb;
 }
 
-.dbRowStatusWaitingForParts {
-	background-color: #f1f1f1;
+.dbRowStatus_quoted {
+	background-color: #fef3c7;
 }
 
-.dbRowStatusWaitingForDecision {
-	background-color: #f1f1f1;
+.dbRowStatus_waiting_for_parts {
+	background-color: #ffedd5;
 }
 
-.dbRowStatusCompleted {
-	background-color: #e1ffe6;
+.dbRowStatus_paused {
+	background-color: #ffedd5;
 }
 
-.dbRowStatusNotCompleted {
-	background-color: #ffe1e1;
+.dbRowStatus_in_repair {
+	background-color: #ccf1fb;
 }
 
-.dbRowStatusClosed {
-	background-color: #e1f5ff;
+.dbRowStatus_ready_for_pickup {
+	background-color: #d1fae5;
+}
+
+.dbRowStatus_completed {
+	background-color: #e5e7eb;
+}
+
+.dbRowStatus_cancelled {
+	background-color: #e5e7eb;
+}
+
+.dbRowStatus_expired {
+	background-color: #e5e7eb;
 }
 
 .dbDataDetailsTabsContainer {
