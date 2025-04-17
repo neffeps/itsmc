@@ -50,7 +50,7 @@ function repair_list() {
 				<td>${clientName}</td>
 				<td>${sanitizeValue(row.brand)}</td>
 				<td>${sanitizeValue(row.model)}</td>
-				<td>${sanitizeValue(row.status)}</td>
+				<td>${statusLabel(row.status)}</td>
 				<td>${sanitizeValue(row.damage_description)}</td>
 				<td class="dbRowRoundedRight">${sanitizeValue(row.repair_description)}</td>
 			`;
@@ -69,6 +69,22 @@ function sanitizeValue(value) {
 
 function sanitizeStatus(status) {
 	return sanitizeValue(status).toLowerCase().replace(/\s+/g, '_').replace(/[^a-z0-9_]/g, '');
+}
+
+function statusLabel(statusLabel) {
+	const statusMap = {
+		"unassigned": "Nieprzydzielone",
+		"diagnosis": "Diagnoza",
+		"quoted": "Wycenione",
+		"waiting_for_parts": "Oczekuje na części",
+		"paused": "Wstrzymane",
+		"in_repair": "W naprawie",
+		"ready_for_pickup": "Gotowe do odbioru",
+		"completed": "Odebrane",
+		"cancelled": "Anulowane",
+		"expired": "Przedawnione",
+	}
+	return statusMap[statusLabel] || "";
 }
 
 repair_list();
