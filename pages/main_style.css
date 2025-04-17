@@ -352,12 +352,12 @@ td {
 .dbRow {
 	height: 28px;
 	cursor: default;
-	transition: background-color 0.2s ease;
+	transition: filter 0.2s ease;
 }
 
 .dbRow:hover {
 	cursor: pointer;
-	filter: opacity(0.9);
+	filter: opacity(0.75);
 }
 
 .dbRowRoundedLeft {
