@@ -39,7 +39,7 @@ function repair_list() {
 		let dbDataContent = '';
 
 		api_response.data.forEach(row => {
-			const statusClass = `dbRowStatus_${sanitizeStatus(row.status)}`;
+			const statusClass = `dbRowStatus_${sanitizeValue(row.status)}`;
 			const clientName = row.is_company == 1 
 			? sanitizeValue(row.company_name)
 			: `${sanitizeValue(row.first_name)} ${sanitizeValue(row.last_name)}`;
@@ -65,10 +65,6 @@ function repair_list() {
 
 function sanitizeValue(value) {
 	return value === null || value === undefined ? '' : value;
-}
-
-function sanitizeStatus(status) {
-	return sanitizeValue(status).toLowerCase().replace(/\s+/g, '_').replace(/[^a-z0-9_]/g, '');
 }
 
 function statusLabel(statusLabel) {

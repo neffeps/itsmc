@@ -357,7 +357,7 @@ td {
 
 .dbRow:hover {
 	cursor: pointer;
-	background-color: #fff5f0;
+	filter: opacity(0.9);
 }
 
 .dbRowRoundedLeft {
