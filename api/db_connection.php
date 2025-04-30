@@ -1,8 +1,8 @@
 <?php
-    $host = "localhost";
-    $db_name = "ofbsthnt_itsmc";
-    $username = "ofbsthnt_itsmc";
-    $password = "sXkM7TSZEhgTrZkLGYga";
+    $host = "xxx";
+    $db_name = "xxx";
+    $username = "xxx";
+    $password = "xxx";
 
     try { //próba połączenia
         $db_connection = new PDO("mysql:host=$host;dbname=$db_name;charset=utf8", $username, $password);
