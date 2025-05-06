@@ -33,20 +33,22 @@
     }
 
     $id = intval($_GET['id']);
-    $query = "SELECT users.username AS assigned_user, internal_repairs.id, 
-            internal_repairs.eq_company, internal_repairs.eq_model, 
-            internal_repairs.eq_type, internal_repairs.eq_status, 
-            internal_repairs.eq_damage_desc, internal_repairs.repair_desc,
-            internal_repairs.repair_status, internal_repairs.repair_type, 
-            clients.is_company, clients.first_name, clients.last_name,
-            clients.company_name, clients.nip, clients.street, 
-            clients.street_number, clients.room_number, clients.city,
-            clients.email_addresses, clients.phone_numbers, 
-            internal_repairs.creation_date
-            FROM internal_repairs 
-            LEFT JOIN clients ON clients.id = internal_repairs.client_id 
-            LEFT JOIN users ON users.id = internal_repairs.user_id
-            WHERE internal_repairs.id = ?";
+    $query = "SELECT 
+    customers.first_name,
+    customers.last_name,
+    local_services.id,
+    devices.brand,
+    devices.model,
+    devices.type AS device_type,
+    local_services.type AS repair_type,
+    local_services.creation_date,
+    local_services.status,
+    local_services.damage_description,
+    local_services.repair_description
+    FROM local_services
+    JOIN customers ON customers.id = local_services.customer_id
+    JOIN devices ON devices.id = local_services.device_id
+    WHERE local_services.id = ?";
     $stmt = $db_connection->prepare($query);
     $stmt->execute([$id]);
     $data_row = $stmt->fetch(PDO::FETCH_ASSOC);
